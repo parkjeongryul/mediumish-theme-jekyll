@@ -7,7 +7,6 @@ favicon: 'assets/images/logo.png'
 baseurl: /mediumish-theme-jekyll
 google_analytics: 'UA-46278016-1'
 disqus: 'demowebsite'
-mailchimp-list: 'https://wowthemes.us11.list-manage.com/subscribe/post?u=8aeb20a530e124561927d3bd8&amp;id=8c3d2d214b'
 include: ["_pages"]
 permalink: /:title/
 
@@ -31,7 +30,7 @@ authors:
     description: "Author of Mediumish, a Bootstrap Medium styled template available for WordPress, HTML, Ghost and Jekyll. You are currently previewing Jekyll template demo."
   jrpark:
     name: jrpark
-    display_name: jrpark
+    display_name: Jeongryul Park
     avatar: 'assets/images/jrpark.png'
     email: jeongryul.park@navercorp.com
     description: "Cloud Automation"
