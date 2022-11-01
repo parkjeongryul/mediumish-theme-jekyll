@@ -12,19 +12,17 @@ toc: true
 
 # kubernetes scheduler simulator란?
 
-kubernetes의 기본적인 scheduler는 다양한 설정을 지원하기 때문에, 대부분의 경우 custom scheduler를 구현할 필요가 없습니다.
+kubernetes의 기본적인 scheduler는 다양한 설정을 지원하기 때문에, 대부분의 경우에는 custom scheduler를 구현할 필요가 없습니다.
 
 그러나 scheduler가 다른 컴포넌트들과 어떻게 동작하는지 알기 위해서 혹은 쿠버네티스 기본 스케줄러의 예상하지 못한 동작을 막기 위해서 직접  scheduler를 개발하고자하는 니즈가 있습니다.
 
-kubernetes 환경에서 스케줄링의 결과를 자세하기 확인하기 위해서는 control plane에 접속하여 log를 살펴볼 수 밖에 없습니다. 
+kubernetes 환경에서 스케줄링의 결과를 자세하기 확인하기 위해서는 control plane에 접속하여 로그를 살펴볼 수 밖에 없습니다. 
 
-이것이 `kube-scheduler-simulator` 를 개발한 이유입니다. 
-
-`kube-scheduler-simulator` 는 web UI를 통해서 scheduler의 동작을 확인할 수 있습니다.
+`kube-scheduler-simulator` 는 web UI를 통해서 scheduler의 동작을 확인할 수 있기때문에, 커스텀 스케줄러 개발을 용이하게 합니다.
 
 # Setup kubernetes scheduler simulator
 
- `kube-scheduler-simulator`를 이용한 scheduler 개발 환경 구축 방법에 대해서 소개합니다.
+ `kube-scheduler-simulator`를 이용한 scheduler 개발 환경 구축 방법에 대해서 설명하겠습니다.
 > 로컬 환경 실행 기준
 <img width="892" alt="image" src="https://user-images.githubusercontent.com/25222969/198226456-f287e590-648c-4d28-8474-790cf89fcf60.png">
 
@@ -37,7 +35,7 @@ kubernetes 환경에서 스케줄링의 결과를 자세하기 확인하기 위�
 # Add a minimal scheduler to kube-scheduler-simulator
 [mini-kube-scheduler](https://github.com/sanposhiho/mini-kube-scheduler)을 base implementation으로 custom scheduler 개발을 시작할 수 있습니다.
 
-다음과 같이 mini-kube-scheduler 코드를 kube-scheduler-simulator에 추가하여 scheduling 로직을 제어할 수 있습니다.
+다음과 같이 mini-kube-scheduler 코드를 kube-scheduler-simulator에 추가하여 scheduling 알고리즘을 구현할 수 있도록 초기 환경을 설정합니다.
 
 1. Copy mini-kube-scheduler/minisched (from branch initial-random-scheduler) into kube-scheduler-simulator
 2. Modify kube-scheduler-simulator/scheduler/scheduler.go to use the minisched (변경 사항은 아래 코드 참고)
@@ -125,6 +123,7 @@ index a5d5ca2..8eb931d 100644
 이제  minisched/minisched.go를 수정함으로써 스케줄링 로직을 수정할 수 있습니다.
 
 다음과 같이 pod를 첫번째 노드에 무조건 스케줄링되도록 구현해보았습니다.
+하나의 노드에 모든 pod가 스케줄링 되는것을 확인할 수 있습니다.
 
 ```golang
 Patch license: MIT (same as mini-kube-scheduler)
