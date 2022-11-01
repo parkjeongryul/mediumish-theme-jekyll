@@ -1,6 +1,6 @@
 ---
 layout: post
-author: jrpark
+author: jeongryul
 title: "kubernetes scheduler simulator에 대한 소개"
 subtitle: "custom scheduler 개발 환경 구축"
 date: 2022-10-24 23:45:13 -0400
