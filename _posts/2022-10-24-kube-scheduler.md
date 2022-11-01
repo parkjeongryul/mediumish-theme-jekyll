@@ -1,12 +1,13 @@
 ---
 layout: post
-author: jeongryul
+author: jrpark
 title: "kubernetes scheduler simulator에 대한 소개"
-subtitle: "custom scheduler 개발 환경 구축"
+description: "custom scheduler 개발 환경 구축"
 date: 2022-10-24 23:45:13 -0400
-image: assets/images/17.jpg
-categories: [ kubernetes, tutorial ]
-tags: [red, yellow]
+image: assets/images/4.jpg
+categories: [ kubernetes, scheduler ]
+tags: [ kube-scheduler-simulator, minisched ]
+toc: true
 ---
 
 # kubernetes scheduler simulator란?
